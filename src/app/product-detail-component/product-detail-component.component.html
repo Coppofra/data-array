@@ -1,1 +1,17 @@
-<p>product-detail-component works!</p>
+<div class="card-header" [attr.id]="'heading'+idx">
+    <h2 class="mb-0 header-with-buttons">
+        <button class="btn btn-link btn-block text-left" type="button" data-toggle="collapse"
+            [attr.data-target]="'#collapse'+idx" aria-expanded="true" [attr.aria-controls]="'collapse'+idx">
+            {{product['name']}} (cod: {{idx}})
+        </button>
+        <button type="button" class="btn btn-danger" (click)="this.removeProduct.emit(idx)">Rimuovi</button>
+    </h2>
+</div>
+
+<div [attr.id]="'collapse'+idx" class="collapse show" [attr.aria-labelledby]="'heading'+idx"
+    data-parent="#accordionExample">
+    <div class="card-body">
+        <div>Prezzo: {{product['price']}} €</div>
+        <div>Descrizione: {{product['description']}}</div>
+    </div>
+</div>
