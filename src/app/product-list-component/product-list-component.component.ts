@@ -44,6 +44,10 @@ export class ProductListComponentComponent implements OnInit {
   }
 
   removeProduct(index: number) {
-    this.products = this.products.splice(index, 1)
+    alert('Stai per cancellare il prodotto ' + index);
+    this.products.splice(index, 1)
   }
+
+
+
 }
